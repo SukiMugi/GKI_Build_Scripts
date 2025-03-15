@@ -8,7 +8,8 @@ read -p "请输入你想要的内核安全补丁日期，例如 2025-03: " PATCH
 # 组合目录名称
 KERNEL_DIR="${KMI}-${PATCH_DATE}"
 
-# 创建目录并进入
+# 删除旧目录，创建目录并进入
+rm rf "$KERNEL_DIR"
 mkdir "$KERNEL_DIR" && cd "$KERNEL_DIR"
 
 # 更新软件包并安装必要的软件
